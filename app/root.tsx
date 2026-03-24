@@ -8,10 +8,9 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import "./styles/index.scss";
 
-export const links: Route.LinksFunction = () => [
-
-];
+export const links: Route.LinksFunction = () => [];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,51 +1,49 @@
-import { RawLink } from "~/components/RawLink";
+import { RawLink } from "~/components/generic/RawLink";
 import { platforms } from "./platforms";
-import './style.css'; // load website style
+import { DecDeBox } from "~/components/containers/DecDeSection";
+import { DecDeWidthContainer } from "~/components/containers/DecDeWidthContainer";
+import { DecDeDescriptionList } from "~/components/generic/DecDeDescriptionList";
+import { SiteHeader } from "~/components/SiteHeader";
+import { SiteFooter } from "~/components/SiteFooter";
 
 const HomePage = () => {
   return (
     <div>
       <main>
-        <div class="box">
-          <h1>DECtalk Community</h1>
-          <h3>Awesome since 1984</h3>
-          
-          <br></br>
-          <p>
-            this website is under construction
-            <br />
-            check out our other fun pages while you wait
-          </p>
-
-        </div>
-          <br></br>
-          <div class="box">
-
+        <DecDeWidthContainer>
+          <SiteHeader />
+          <DecDeBox>
             <h2>Cool Links:</h2>
-            <dl>
-              <dt>
-                <a href="https://github.com/dectalk">Github -&gt;</a>
-              </dt>
-              <dd>where our code lives</dd>
-              <dt>
-                <a href="https://bytesizedfox.dev/">Web Demo -&gt;</a>
-              </dt>
-              <dd>a fully web based version of dectalk</dd>
-              <dt>
-                <a href="https://discordapp.com/invite/wHgdmf4">Discord -&gt;</a>
-              </dt>
-              <dd>
-                where we hang out -- we apologise for those using screenreaders
-              </dd>
-            </dl>
+            <DecDeDescriptionList
+              entries={[
+                {
+                  key: "github",
+                  label: <a href="https://github.com/dectalk">Github</a>,
+                  definition: "where our code lives",
+                },
+                {
+                  key: "",
+                  label: <a href="https://bytesizedfox.dev/">Web Demo</a>,
+                  definition: "a fully web based version of dectalk",
+                },
+                {
+                  key: "",
+                  label: (
+                    <a href="https://discordapp.com/invite/wHgdmf4">Discord</a>
+                  ),
+                  definition:
+                    "where we hang out -- we apologise to those using screenreaders",
+                },
+              ]}
+            />
 
             <h2>Fun DECtalk ports:</h2>
-            <table border={1}>
+            <table className="decde-table">
               <thead>
                 <tr>
-                  <td>Platform</td>
-                  <td>Description</td>
-                  <td>Link</td>
+                  <th>Platform</th>
+                  <th>Description</th>
+                  <th>Link</th>
                 </tr>
               </thead>
               <tbody>
@@ -60,25 +58,11 @@ const HomePage = () => {
                 ))}
               </tbody>
             </table>
-            <br></br>
-            <p>Downloads coming Soon :3</p>
-          </div>
-
-          <br></br>
-          <footer>
-          <p>
-            <i>
-              <b>dectalk.de</b>/ctalk
-            </i>{" "}
-            was brought to you by the{" "}
-            <i>
-              <b>dectalk.de</b>/velopers
-            </i>{" "}
-            team
-          </p>
-        </footer>
-
-        </main>
+            <p>Downloads coming Soon uwu</p>
+          </DecDeBox>
+          <SiteFooter />
+        </DecDeWidthContainer>
+      </main>
     </div>
   );
 };

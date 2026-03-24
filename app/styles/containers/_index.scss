@@ -1,0 +1,17 @@
+.decde-box {
+  box-shadow: 6px 6px 0 #111;
+  border-style: solid;
+  border-width: 3px;
+  padding: 0.5em;
+  background-color: #fff; /* break up that color, pal */
+  margin: 2em 0;
+}
+
+.decde-box:first-child {
+  margin-top: 0;
+}
+
+.decde-width-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

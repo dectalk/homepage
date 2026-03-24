@@ -1,0 +1,24 @@
+.decde-datalist {
+  &--group {
+    margin: 0.4em 0;
+  }
+  &--group:first-child,
+  &--group:last-child {
+    margin: 0;
+  }
+
+  &--label {
+    font-weight: bold;
+    font-size: 14pt;
+  }
+
+  &--label::after {
+    content: "->";
+    margin-left: 0.2em;
+    font-weight: bold;
+  }
+
+  &--definition {
+    font-style: italic;
+  }
+}
