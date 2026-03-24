@@ -5,3 +5,6 @@
 # React Router
 /.react-router/
 /build/
+
+# Push to `dectalk-de` repo
+/dist/
