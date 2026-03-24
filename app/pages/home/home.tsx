@@ -42,7 +42,9 @@ const HomePage = () => {
               <tr key={x.id}>
                 <td>{x.id}</td>
                 <td>{x.description}</td>
-                <td>{x.link ? <RawLink target="_blank" href={x.link} /> : "-"}</td>
+                <td>
+                  {x.link ? <RawLink target="_blank" href={x.link} /> : "-"}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -52,8 +54,13 @@ const HomePage = () => {
         <hr />
         <p>
           <i>
+            <b>dectalk.de</b>/ctalk
+          </i>{" "}
+          was brought to you by the{" "}
+          <i>
             <b>dectalk.de</b>/velopers
-          </i>
+          </i>{" "}
+          team
         </p>
       </footer>
     </div>
