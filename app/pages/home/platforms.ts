@@ -9,7 +9,11 @@ const platforms = [
     description: "Nintendo Game Boy Advance",
     link: "https://github.com/dectalk/DECtalkMini/tree/dectalk-develop/platforms/gba",
   },
-  { id: "hytale", description: "Hytale mod", link: null },
+  { 
+    id: "hytale",
+    description: "Hytale mod",
+    link: "https://github.com/Azim/HytaleMoonbaseTTS"
+  },
   {
     id: "minecraft",
     description: "Minecraft Forge mod",
