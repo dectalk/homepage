@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div>
       <main>
-        <h1>dectalk developers</h1>
+        <h1>DECtalk Community</h1>
         <p>
           this website is under construction
           <br />
@@ -17,7 +17,7 @@ const HomePage = () => {
           </dt>
           <dd>where our code lives</dd>
           <dt>
-            <a href="https://bytesizedfox.dev/">web speak window</a>
+            <a href="https://bytesizedfox.dev/">web speak window (still working out some bugs - Byte)</a>
           </dt>
           <dd>a fully web based version of dectalk</dd>
           <dt>
@@ -62,6 +62,7 @@ const HomePage = () => {
           </i>{" "}
           team
         </p>
+        <p>ByteSizedFox was here (baked beans)</p>
       </footer>
     </div>
   );
