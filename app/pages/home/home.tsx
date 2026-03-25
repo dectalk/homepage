@@ -6,9 +6,15 @@ import { DecDeDescriptionList } from "~/components/generic/DecDeDescriptionList"
 import { SiteHeader } from "~/components/SiteHeader";
 import { SiteFooter } from "~/components/SiteFooter";
 
+import { useSearchParams } from 'react-router-dom';
+
 const HomePage = () => {
+  const [searchParams] = useSearchParams();
+  const isBaked = searchParams.get('baked') === 'true';
+  
   return (
     <div>
+      {!isBaked ?
       <main>
         <DecDeWidthContainer>
           <SiteHeader />
@@ -62,7 +68,7 @@ const HomePage = () => {
           </DecDeBox>
           <SiteFooter />
         </DecDeWidthContainer>
-      </main>
+      </main> : <p>beans</p>}
     </div>
   );
 };

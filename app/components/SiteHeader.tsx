@@ -1,4 +1,5 @@
 import { DecDeBox } from "./containers/DecDeSection";
+import { useSearchParams } from 'react-router-dom';
 
 const SiteHeader = () => (
   <DecDeBox>
