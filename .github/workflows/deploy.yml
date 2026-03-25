@@ -9,32 +9,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Checkout
-      uses: actions/checkout@master
-      with:
-        repository: dectalk/dectalk-de
-        path: dist
-        persist-credentials: false
-        fetch-depth: 0
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: "24"
-    - name: Build website
-      run: |
-        npm ci
-        npm run build
-        cp -R build/client/* dist
-        cd dist/
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add .
-        git commit -a -m "${{ github.ref }}"
-    - name: Commit & Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        directory: dist
-        repository: dectalk/dectalk-de
-        github_token: ${{ secrets.DEPLOY_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          repository: dectalk/dectalk-de
+          path: dist
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Build website
+        run: |
+          npm ci
+          npm run build
+          cp -R build/client/* dist
+          cd dist/
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -a -m "${{ github.event.repository.name }} / ${{ github.event.head_commit.message }}"
+      - name: Commit & Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          directory: dist
+          repository: dectalk/dectalk-de
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
