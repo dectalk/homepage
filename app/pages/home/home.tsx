@@ -68,7 +68,7 @@ const HomePage = () => {
                 ))}
               </tbody>
             </table>
-            <p>Downloads coming Soon uwu</p>
+            <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">==&gt; Download Here &lt;==</a>
           </DecDeBox>
           <SiteFooter />
         </DecDeWidthContainer>
