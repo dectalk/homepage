@@ -46,6 +46,7 @@ const HomePage = () => {
                 },
               ]}
             />
+            <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">==&gt; Download Here &lt==</a>
 
             <h2>Fun DECtalk ports:</h2>
             <table className="decde-table">
@@ -68,7 +69,6 @@ const HomePage = () => {
                 ))}
               </tbody>
             </table>
-            <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">==&gt; Download Here &lt;==</a>
           </DecDeBox>
           <SiteFooter />
         </DecDeWidthContainer>
