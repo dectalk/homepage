@@ -27,17 +27,22 @@ const HomePage = () => {
                   definition: "where our code lives",
                 },
                 {
-                  key: "",
+                  key: "webdemo",
                   label: <a href="https://bytesizedfox.dev/">Web Demo</a>,
                   definition: "a fully web based version of dectalk",
                 },
                 {
-                  key: "",
+                  key: "discord",
                   label: (
                     <a href="https://discordapp.com/invite/wHgdmf4">Discord</a>
                   ),
                   definition:
                     "where we hang out -- we apologise to those using screenreaders",
+                },
+                {
+                  key: "manual",
+                  label: <a href="http://dectalk.de/manual/">Manual</a>,
+                  definition: "DECtalk for Windows Manual",
                 },
               ]}
             />
