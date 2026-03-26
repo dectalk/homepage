@@ -1,20 +1,19 @@
-import { RawLink } from "~/components/generic/RawLink";
-import { platforms } from "./platforms";
+import { useSearchParams } from "react-router-dom";
 import { DecDeBox } from "~/components/containers/DecDeSection";
 import { DecDeWidthContainer } from "~/components/containers/DecDeWidthContainer";
 import { DecDeDescriptionList } from "~/components/generic/DecDeDescriptionList";
-import { SiteHeader } from "~/components/SiteHeader";
+import { RawLink } from "~/components/generic/RawLink";
 import { SiteFooter } from "~/components/SiteFooter";
-
-import { useSearchParams } from 'react-router-dom';
+import { SiteHeader } from "~/components/SiteHeader";
+import { platforms } from "./platforms";
 
 const HomePage = () => {
   const [searchParams] = useSearchParams();
-  const isBaked = searchParams.get('baked') === 'true';
-  
+  const isBaked = searchParams.has("baked");
+  if (isBaked) return <p>beans</p>;
+
   return (
     <div>
-      {!isBaked ?
       <main>
         <DecDeWidthContainer>
           <SiteHeader />
@@ -68,7 +67,7 @@ const HomePage = () => {
           </DecDeBox>
           <SiteFooter />
         </DecDeWidthContainer>
-      </main> : <p>beans</p>}
+      </main>
     </div>
   );
 };
