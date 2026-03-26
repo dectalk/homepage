@@ -1,7 +1,30 @@
 .decde-table {
   border-collapse: collapse;
+  width: 100%;
   td {
     border: 1px solid;
     padding: 0.2em;
+  }
+  th {
+    border: 1px solid;
+    padding: 0.2em;
+    text-align: left;
+  }
+  td,
+  th {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  td:last-child {
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 720px) {
+  .decde-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
