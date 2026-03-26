@@ -9,10 +9,10 @@ const platforms = [
     description: "Nintendo Game Boy Advance",
     link: "https://github.com/dectalk/DECtalkMini/tree/dectalk-develop/platforms/gba",
   },
-  { 
+  {
     id: "hytale",
     description: "Hytale mod",
-    link: "https://github.com/Azim/HytaleMoonbaseTTS"
+    link: "https://github.com/Azim/HytaleMoonbaseTTS",
   },
   {
     id: "minecraft",
@@ -22,7 +22,7 @@ const platforms = [
   {
     id: "nodejs",
     description: "native node addon",
-    link: "https://github.com/dectalk/DECtalkMini/tree/dectalk-develop/node",
+    link: "https://github.com/dectalk/DECtalkMini/tree/dectalk-develop/platforms/node",
   },
   {
     id: "pico",
