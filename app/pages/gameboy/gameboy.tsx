@@ -12,10 +12,18 @@ const GameBoyPage = () => {
 
   useEffect(() => {
     if (gameboy) {
-      gameboy.loadGame(dectalk);
-      gameboy.resumeGame();
+      const load = async () => {
+        const req = await fetch(dectalk);
+        const blob = await req.blob();
+        const file = new File([blob], "dectalk.gba");
+
+        gameboy.uploadRom(file, () => {
+          gameboy.loadGame(gameboy.filePaths().gamePath + "/dectalk.gba");
+        });
+      };
+      load();
     }
-  }, [ref]);
+  }, [ref, gameboy]);
 
   return (
     <div>
