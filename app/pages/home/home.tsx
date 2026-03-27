@@ -33,11 +33,8 @@ const HomePage = () => {
                 },
                 {
                   key: "discord",
-                  label: (
-                    <a href="https://discordapp.com/invite/wHgdmf4">Discord</a>
-                  ),
-                  definition:
-                    "where we hang out -- we apologise to those using screenreaders",
+                  label: <a href="https://discordapp.com/invite/wHgdmf4">Discord</a>,
+                  definition: "where we hang out -- we apologise to those using screenreaders",
                 },
                 {
                   key: "manual",
@@ -46,9 +43,7 @@ const HomePage = () => {
                 },
               ]}
             />
-            <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">
-              ==&gt; Download Here &lt;==
-            </a>
+            <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">==&gt; Download Here &lt;==</a>
 
             <h2>Fun DECtalk ports:</h2>
             <table className="decde-table">
@@ -60,20 +55,12 @@ const HomePage = () => {
                 </tr>
               </thead>
               <tbody>
-                {platforms.map((x) => (
+                {platforms.map(x => (
                   <tr key={x.id}>
                     <td>{x.link ? <a href={x.link}>{x.id}</a> : x.id}</td>
                     <td>{x.description}</td>
                     <td className="decde-desktop-only">
-                      {x.link ? (
-                        <RawLink
-                          className="decde-font-small"
-                          target="_blank"
-                          href={x.link}
-                        />
-                      ) : (
-                        "-"
-                      )}
+                      {x.link ? <RawLink className="decde-font-small" target="_blank" href={x.link} /> : "-"}
                     </td>
                   </tr>
                 ))}
