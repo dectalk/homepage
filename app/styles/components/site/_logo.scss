@@ -1,0 +1,44 @@
+.decde-site-logo--container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.decde-site-logo--image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.decde-site-logo--animated-image {
+  animation-name: logo-fade;
+  animation-duration: 9s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+  opacity: 0;
+
+  @for $i from 0 through 8 {
+    &-#{$i} {
+      animation-delay: #{$i + 1}s;
+    }
+  }
+}
+
+@keyframes logo-fade {
+  0% {
+    opacity: 0;
+  }
+  11.1111% {
+    opacity: 0;
+  }
+  22.2222% {
+    opacity: 1;
+  }
+  33.3333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

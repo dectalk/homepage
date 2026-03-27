@@ -1,4 +1,16 @@
 body {
-  border: 0;
   background-color: #e4e0d7;
+  @media (max-width: 300px) {
+    margin: 0.2em;
+  }
+}
+
+.decde-font-small {
+  font-size: 10pt;
+}
+
+@media (max-width: 900px) {
+  .decde-desktop-only {
+    display: none;
+  }
 }

@@ -5,6 +5,11 @@
   padding: 0.5em;
   background-color: #fff; /* break up that color, pal */
   margin: 2em 0;
+
+  @media (max-width: 300px) {
+    padding: 0.2em;
+    margin: 1em 0;
+  }
 }
 
 .decde-box:first-child {
@@ -15,4 +20,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  @media (max-width: 300px) {
+    padding: 0;
+  }
 }

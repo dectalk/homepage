@@ -1,0 +1,23 @@
+import { DecDeBox } from "../containers/DecDeSection";
+import { SiteLogo } from "./SiteLogo";
+
+const SiteHeader = () => (
+  <DecDeBox>
+    <div className="decde-site-header--container">
+      <div className="decde-site-header--left">
+        <h1 className="decde-site-header--title">DECtalk Community</h1>
+        <span className="decde-site-header--tagline">Awesome since 1984</span>
+        <p className="decde-site-header--disclaimer">
+          this website is under construction
+          <br />
+          check out our other fun pages while you wait
+        </p>
+      </div>
+      <div className="decde-site-header--right">
+        <SiteLogo />
+      </div>
+    </div>
+  </DecDeBox>
+);
+
+export { SiteHeader };

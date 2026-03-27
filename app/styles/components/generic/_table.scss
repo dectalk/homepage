@@ -1,47 +1,27 @@
 .decde-table {
   border-collapse: collapse;
-  width: 100%;
-  td {
-    border: 1px solid;
-    padding: 0.2em;
-  }
+
   th {
-    border: 1px solid;
-    padding: 0.2em;
     text-align: left;
   }
-  td:first-child,
-  th:first-child {
-    white-space: nowrap;
-    width: 1%;
-  }
-}
+  td,
+  th {
+    border: 1px solid;
+    padding: 0.3em 0.7em;
 
-.decde-table--mobile {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .decde-table--desktop {
-    display: none;
+    &:first-child {
+      white-space: nowrap;
+    }
   }
 
-  .decde-table--mobile-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .decde-table--mobile {
-    display: table;
+  @media (max-width: 300px) {
     td,
     th {
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-    td:last-child {
-      word-break: break-all;
+      padding: 0.2em;
     }
   }
-}
 
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}

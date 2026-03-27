@@ -3,8 +3,8 @@ import { DecDeBox } from "~/components/containers/DecDeSection";
 import { DecDeWidthContainer } from "~/components/containers/DecDeWidthContainer";
 import { DecDeDescriptionList } from "~/components/generic/DecDeDescriptionList";
 import { RawLink } from "~/components/generic/RawLink";
-import { SiteFooter } from "~/components/SiteFooter";
-import { SiteHeader } from "~/components/SiteHeader";
+import { SiteFooter } from "~/components/site/SiteFooter";
+import { SiteHeader } from "~/components/site/SiteHeader";
 import { platforms } from "./platforms";
 
 const HomePage = () => {
@@ -46,47 +46,39 @@ const HomePage = () => {
                 },
               ]}
             />
-            <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">==&gt; Download Here &lt;==</a>
+            <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">
+              ==&gt; Download Here &lt;==
+            </a>
 
             <h2>Fun DECtalk ports:</h2>
-            <table className="decde-table decde-table--desktop">
+            <table className="decde-table">
               <thead>
                 <tr>
                   <th>Platform</th>
                   <th>Description</th>
-                  <th>Link</th>
+                  <th className="decde-desktop-only">Link</th>
                 </tr>
               </thead>
               <tbody>
                 {platforms.map((x) => (
                   <tr key={x.id}>
-                    <td>{x.id}</td>
+                    <td>{x.link ? <a href={x.link}>{x.id}</a> : x.id}</td>
                     <td>{x.description}</td>
-                    <td>
-                      {x.link ? <RawLink target="_blank" href={x.link} /> : "-"}
+                    <td className="decde-desktop-only">
+                      {x.link ? (
+                        <RawLink
+                          className="decde-font-small"
+                          target="_blank"
+                          href={x.link}
+                        />
+                      ) : (
+                        "-"
+                      )}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <div className="decde-table--mobile-wrapper">
-            <table className="decde-table decde-table--mobile">
-              <thead>
-                <tr>
-                  <th>Platform</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {platforms.map((x) => (
-                  <tr key={x.id}>
-                    <td><a href={x.link}>{x.id}</a></td>
-                    <td>{x.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            </div>
           </DecDeBox>
           <SiteFooter />
         </DecDeWidthContainer>
