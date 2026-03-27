@@ -13,6 +13,7 @@ const GameBoyPage = () => {
   useEffect(() => {
     if (gameboy) {
       gameboy.loadGame(dectalk);
+      gameboy.resumeGame();
     }
   }, [ref]);
 
