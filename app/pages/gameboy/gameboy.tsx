@@ -1,5 +1,4 @@
-import mGBA, { type mGBAEmulator } from "@thenick775/mgba-wasm";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { DecDeBox } from "~/components/containers/DecDeSection";
 import { DecDeWidthContainer } from "~/components/containers/DecDeWidthContainer";
 import { SiteFooter } from "~/components/site/SiteFooter";
@@ -15,10 +14,6 @@ const GameBoyPage = () => {
     if (gameboy) {
       gameboy.loadGame(dectalk);
     }
-
-    return () => {
-      clearTimeout(timeout);
-    };
   }, [ref]);
 
   return (
