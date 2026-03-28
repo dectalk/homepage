@@ -29,7 +29,7 @@ const HomePage = () => {
             },
             {
               key: "gameboy-demo",
-              label: <Link to="/gameboy">Game Boy Advance</Link>,
+              label: <Link to="/gameboy/">Game Boy Advance</Link>,
               definition:
                 "a fully GBA based version of dectalk... running in a fully web based version of a GBA emulator",
             },
