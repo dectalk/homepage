@@ -4,6 +4,7 @@ import { DecDeDescriptionList } from "~/components/generic/DecDeDescriptionList"
 import { RawLink } from "~/components/generic/RawLink";
 import { SiteWrapper } from "~/components/site/SiteWrapper";
 import { platforms } from "./platforms";
+import { Link } from "react-router";
 
 const HomePage = () => {
   const [searchParams] = useSearchParams();
@@ -28,7 +29,7 @@ const HomePage = () => {
             },
             {
               key: "gameboy-demo",
-              label: <a href="/gameboy">Game Boy Advance</a>,
+              label: <Link to="/gameboy">Game Boy Advance</Link>,
               definition:
                 "a fully GBA based version of dectalk... running in a fully web based version of a GBA emulator",
             },
