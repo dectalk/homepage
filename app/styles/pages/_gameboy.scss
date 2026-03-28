@@ -1,0 +1,82 @@
+.decde-gameboy--screen {
+  aspect-ratio: 240 / 160;
+  width: 100%;
+  min-width: 240px;
+  max-width: 960px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  image-rendering: pixelated;
+
+  @media (max-width: 580px) {
+    width: 240px;
+  }
+}
+
+.decde-gameboy--download {
+  font-size: 24pt;
+  text-align: center;
+}
+
+.decde-gameboy--controls {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin: 2em;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+  }
+
+  .decde-gameboy--dpad,
+  .decde-gameboy--controlbuttons,
+  .decde-gameboy--facebuttons {
+    justify-content: center;
+    display: inline-grid;
+    gap: 0.5em;
+  }
+
+  .decde-gameboy--dpad {
+    grid-template-areas: ". btnup ." "btnleft btndown btnright";
+  }
+
+  .decde-gameboy--controlbuttons {
+    grid-template-areas: "btnstart btnselect";
+  }
+
+  .decde-gameboy--facebuttons {
+    grid-template-areas: "btnb btna";
+  }
+
+  .decde-gameboy--button {
+    aspect-ratio: 1;
+    min-width: 60px;
+    width: 10vw;
+    max-width: 100px;
+
+    &.decde-gameboy--button-up {
+      grid-area: btnup;
+    }
+    &.decde-gameboy--button-left {
+      grid-area: btnleft;
+    }
+    &.decde-gameboy--button-down {
+      grid-area: btndown;
+    }
+    &.decde-gameboy--button-right {
+      grid-area: btnright;
+    }
+    &.decde-gameboy--button-start {
+      grid-area: btnstart;
+    }
+    &.decde-gameboy--button-select {
+      grid-area: btnselect;
+    }
+    &.decde-gameboy--button-b {
+      grid-area: btnb;
+    }
+    &.decde-gameboy--button-a {
+      grid-area: btna;
+    }
+  }
+}

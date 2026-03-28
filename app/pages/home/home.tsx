@@ -27,6 +27,12 @@ const HomePage = () => {
               definition: "a fully web based version of dectalk",
             },
             {
+              key: "gameboy-demo",
+              label: <a href="/gameboy">Game Boy Advance</a>,
+              definition:
+                "a fully GBA based version of dectalk... running in a fully web based version of a GBA emulator",
+            },
+            {
               key: "discord",
               label: <a href="https://discordapp.com/invite/wHgdmf4">Discord</a>,
               definition: "where we hang out -- we apologise to those using screenreaders",
