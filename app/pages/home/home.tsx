@@ -19,7 +19,7 @@ const HomePage = () => {
           entries={[
             {
               key: "github",
-              label: <GoTo href="https://github.com/dectalk">Github</GoTo>,
+              label: <GoTo href="https://github.com/dectalk">GitHub</GoTo>,
               definition: "where our code lives",
             },
             {
