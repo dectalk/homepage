@@ -24,7 +24,7 @@ const HomePage = () => {
             },
             {
               key: "webdemo",
-              label: <GoTo href="https://bytesizedfox.dev/">Web Demo</GoTo>,
+              label: <GoTo href="/webspeak">Web Demo</GoTo>,
               definition: "a fully web based version of dectalk",
             },
             {
