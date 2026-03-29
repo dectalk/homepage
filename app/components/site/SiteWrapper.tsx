@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { DecDeWidthContainer } from "../containers/DecDeWidthContainer";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { SitePhaseBanner } from "./SitePhaseBanner";
 
 const SiteWrapper = ({ children }: { children: ReactNode }) => (
   <div>
@@ -11,6 +12,7 @@ const SiteWrapper = ({ children }: { children: ReactNode }) => (
     <header>
       <DecDeWidthContainer>
         <SiteHeader />
+        <SitePhaseBanner />
       </DecDeWidthContainer>
     </header>
     <main id="main-content">

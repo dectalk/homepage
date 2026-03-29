@@ -1,0 +1,17 @@
+.decde-site-phase-banner {
+  width: 66%;
+  display: flex;
+  gap: 1em;
+  margin: 0 auto 2em auto;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+}
+
+.decde-site-phase-banner--badge {
+  display: block;
+  border: 1px solid;
+  padding: 0.25em;
+}
