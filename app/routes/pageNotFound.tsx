@@ -1,4 +1,4 @@
-import { PageNotFoundPage } from "~/pages/pagenotfound/home";
+import { PageNotFoundPage } from "~/pages/pageNotFound/pageNotFound";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {

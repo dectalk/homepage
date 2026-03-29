@@ -4,6 +4,8 @@ import paul from "./assets/dectalk_buttons/pau16a.gif";
 
 import type { Route } from "./+types/root";
 import "./styles/index.scss";
+import { PageNotFoundPage } from "./pages/pageNotFound/pageNotFound";
+import { CriticalErrorPage } from "./pages/criticalError/crititalError";
 
 export const links: Route.LinksFunction = () => [{ rel: "icon", type: "image/x-icon", href: paul }];
 
@@ -30,27 +32,16 @@ export default function App() {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
+  let message: string | undefined;
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details = error.status === 404 ? "The requested page could not be found." : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
+    if (error.status === 404) return <PageNotFoundPage />;
+    message = error.statusText;
+  } else if (error instanceof Error) {
+    message = error.message;
     stack = error.stack;
   }
 
-  return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
-  );
+  return <CriticalErrorPage message={message} stack={stack} />;
 }

@@ -24,12 +24,6 @@ const GameBoyPage = () => {
 
       load();
     }
-
-    return () => {
-      if (gameboy) {
-        gameboy.quitMgba();
-      }
-    };
   }, [ref, gameboy]);
 
   const press = useCallback(
