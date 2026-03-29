@@ -26,6 +26,8 @@ const WebSpeakPage = () => {
 
   const onSubmit = useCallback(
     (data: InputForm) => {
+      searchParams.set("input", data.input);
+
       if (dectalk) {
         let input = "";
         if (data.phonemes) input += "[:phone on]\n";
