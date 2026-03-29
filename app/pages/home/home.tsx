@@ -38,6 +38,16 @@ const HomePage = () => {
                 "a fully GBA based version of dectalk... running in a fully web based version of a GBA emulator",
             },
             {
+              key: "sonff archive",
+              label: (
+                <GoTo forceAnchor href="/SONGS.zip">
+                  DECtalk song archive
+                </GoTo>
+              ),
+              definition:
+                "The collection of DECtalk songs seen on the YouTube Channel",
+            },
+            {
               key: "discord",
               label: <GoTo href="https://discordapp.com/invite/wHgdmf4">Discord</GoTo>,
               definition: "where we hang out -- we apologise to those using screenreaders",
