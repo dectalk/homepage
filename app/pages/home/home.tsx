@@ -4,7 +4,7 @@ import { DecDeDescriptionList } from "~/components/generic/DecDeDescriptionList"
 import { RawLink } from "~/components/generic/RawLink";
 import { SiteWrapper } from "~/components/site/SiteWrapper";
 import { platforms } from "./platforms";
-import { Link } from "react-router";
+import { GoTo } from "~/components/generic/GoTo";
 
 const HomePage = () => {
   const [searchParams] = useSearchParams();
@@ -19,33 +19,33 @@ const HomePage = () => {
           entries={[
             {
               key: "github",
-              label: <a href="https://github.com/dectalk">Github</a>,
+              label: <GoTo href="https://github.com/dectalk">Github</GoTo>,
               definition: "where our code lives",
             },
             {
               key: "webdemo",
-              label: <a href="https://bytesizedfox.dev/">Web Demo</a>,
+              label: <GoTo href="https://bytesizedfox.dev/">Web Demo</GoTo>,
               definition: "a fully web based version of dectalk",
             },
             {
               key: "gameboy-demo",
-              label: <Link to="/gameboy">Game Boy Advance</Link>,
+              label: <GoTo href="/gameboy">Game Boy Advance</GoTo>,
               definition:
                 "a fully GBA based version of dectalk... running in a fully web based version of a GBA emulator",
             },
             {
               key: "discord",
-              label: <a href="https://discordapp.com/invite/wHgdmf4">Discord</a>,
+              label: <GoTo href="https://discordapp.com/invite/wHgdmf4">Discord</GoTo>,
               definition: "where we hang out -- we apologise to those using screenreaders",
             },
             {
               key: "manual",
-              label: <a href="http://dectalk.de/manual/">Manual</a>,
+              label: <GoTo href="http://dectalk.de/manual/">Manual</GoTo>,
               definition: "DECtalk for Windows Manual",
             },
           ]}
         />
-        <a href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">==&gt; Download Here &lt;==</a>
+        <GoTo href="https://github.com/dectalk/DECtalkMini/releases/tag/latest">==&gt; Download Here &lt;==</GoTo>
 
         <h2>Fun DECtalk ports:</h2>
         <table className="decde-table">
