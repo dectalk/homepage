@@ -8,12 +8,7 @@ const useGameBoy = (canvas: RefObject<HTMLCanvasElement | null>) => {
     const initialize = async () => {
       if (canvas.current) {
         const Module = await mGBA({ canvas: canvas.current });
-
-        const mGBAVersion = Module.version.projectName + " " + Module.version.projectVersion;
-        console.log(mGBAVersion);
-
         await Module.FSInit();
-
         setEmulator(Module);
       }
     };
