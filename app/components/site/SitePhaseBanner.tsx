@@ -1,4 +1,5 @@
 import { HOMEPAGE_GITHUB_ISSUES } from "~/data/links";
+import { GoTo } from "../generic/GoTo";
 
 const SitePhaseBanner = () => {
   return (
@@ -6,9 +7,9 @@ const SitePhaseBanner = () => {
       <span className="decde-site-phase-banner--badge">Alpha</span>
       <span>
         This is a new website. Help us improve it and{" "}
-        <a target="_blank" href={HOMEPAGE_GITHUB_ISSUES}>
+        <GoTo newTab href={HOMEPAGE_GITHUB_ISSUES}>
           give your feedback (opens in a new tab)
-        </a>
+        </GoTo>
         .
       </span>
     </div>

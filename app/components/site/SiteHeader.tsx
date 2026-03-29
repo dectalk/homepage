@@ -1,14 +1,18 @@
 import { DecDeBox } from "../containers/DecDeSection";
+import { GoTo } from "../generic/GoTo";
 import { SiteLogo } from "./SiteLogo";
-import { Link } from "react-router";
 
-const SiteHeader = () => (
+interface ISiteHeader {
+  forceAnchor?: boolean;
+}
+
+const SiteHeader = ({ forceAnchor }: ISiteHeader) => (
   <DecDeBox className="decde-site-header--box">
     <div className="decde-site-header--container">
       <div className="decde-site-header--left">
-        <Link to="/">
+        <GoTo href="/" forceAnchor={forceAnchor}>
           <h1 className="decde-site-header--title">DECtalk Community</h1>
-        </Link>
+        </GoTo>
         <span className="decde-site-header--tagline">Awesome since 1984</span>
       </div>
       <div className="decde-site-header--right">

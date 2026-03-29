@@ -4,14 +4,19 @@ import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { SitePhaseBanner } from "./SitePhaseBanner";
 
-const SiteWrapper = ({ children }: { children: ReactNode }) => (
+interface ISiteWrapper {
+  children?: ReactNode;
+  forceAnchor?: boolean;
+}
+
+const SiteWrapper = ({ children, forceAnchor }: ISiteWrapper) => (
   <div>
     <a className="decde-assistive-only" href="#main-content">
       Skip to main content
     </a>
     <header>
       <DecDeWidthContainer>
-        <SiteHeader />
+        <SiteHeader forceAnchor={forceAnchor} />
         <SitePhaseBanner />
       </DecDeWidthContainer>
     </header>

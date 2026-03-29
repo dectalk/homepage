@@ -2,29 +2,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { DecDeBox } from "~/components/containers/DecDeSection";
 import { SiteWrapper } from "~/components/site/SiteWrapper";
 import { useGameBoy } from "~/hooks/useGameBoy";
-import dectalkGba from "./DECtalkMiniV3.gba";
+import dectalkGba from "../../assets/DECtalkMiniV3.gba";
+import { GoTo } from "~/components/generic/GoTo";
 
 const GameBoyPage = () => {
   const ref = useRef<HTMLCanvasElement>(null);
   const gameboy = useGameBoy(ref);
-  const [loaded, setLoaded] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (gameboy && !loaded) {
-      const load = async () => {
-        const req = await fetch(dectalkGba);
-        const blob = await req.blob();
-        const file = new File([blob], "dectalk.gba");
-
-        gameboy.uploadRom(file, () => {
-          const success = gameboy.loadGame(gameboy.filePaths().gamePath + "/dectalk.gba");
-          if (success) setLoaded(true);
-        });
-      };
-
-      load();
-    }
-  }, [ref, gameboy]);
 
   const press = useCallback(
     (button: string) => () => {
@@ -39,7 +22,7 @@ const GameBoyPage = () => {
   );
 
   return (
-    <SiteWrapper>
+    <SiteWrapper forceAnchor>
       <DecDeBox>
         <canvas
           aria-description="A DECtalk program running in an emulator compatible with Nintendo Game Boy Advance games."
@@ -48,7 +31,9 @@ const GameBoyPage = () => {
         />
 
         <p className="decde-gameboy--download">
-          <a href={dectalkGba}>Download ROM here!</a>
+          <GoTo download href={dectalkGba}>
+            Download ROM here!
+          </GoTo>
         </p>
 
         <div className="decde-gameboy--controls">
