@@ -6,4 +6,5 @@ export default {
   prerender: {
     paths: ["/", "/gameboy", "/404"],
   },
+  ssr: false,
 } satisfies Config;
