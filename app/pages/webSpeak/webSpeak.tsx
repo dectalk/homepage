@@ -43,8 +43,10 @@ const WebSpeakPage = () => {
         const link = URL.createObjectURL(blob);
         setAudioLink(link);
 
-        audioPlayer.current?.load();
-        audioPlayer.current?.play();
+        setTimeout(() => {
+          audioPlayer.current?.load();
+          audioPlayer.current?.play();
+        }, 0);
       }
     },
     [dectalk],
