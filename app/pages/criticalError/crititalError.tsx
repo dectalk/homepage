@@ -17,11 +17,13 @@ const CriticalErrorPage = ({ message, stack }: ICriticalErrorPage) => {
           <a href={DISCORD_INVITE}>Contact the community maintainers</a> if you continue to face issues with the web
           site.
         </p>
-        <details>
-          <summary>Detailed error summary</summary>
-	  <p>{message}</p>
-          <pre>{stack}</pre>
-        </details>
+        {message && stack && (
+          <details>
+            <summary>Detailed error summary</summary>
+            {message && <p>{message}</p>}
+            {stack && <pre>{stack}</pre>}
+          </details>
+        )}
       </DecDeBox>
     </SiteWrapper>
   );
