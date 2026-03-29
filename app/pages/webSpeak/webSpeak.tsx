@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import { DecDeBox } from "~/components/containers/DecDeSection";
 import { SiteWrapper } from "~/components/site/SiteWrapper";
-import { useDectalk } from "./dectalk";
+import { DECtalkTransformation, useDectalk } from "./dectalk";
 import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "react-router";
 
 interface InputForm {
   phonemes: boolean;
   input: string;
-  format: 1 | 0;
+  format: DECtalkTransformation;
 }
 
 const WebSpeakPage = () => {
@@ -19,7 +19,7 @@ const WebSpeakPage = () => {
   const { register, handleSubmit } = useForm<InputForm>({
     defaultValues: {
       input: searchParams.get("input") ?? "",
-      format: 1,
+      format: DECtalkTransformation.DEFAULT_11025,
       phonemes: true,
     },
   });
@@ -62,7 +62,7 @@ const WebSpeakPage = () => {
         <p>This is a version of DECtalk compiled into WebAssembly, which runs entirely within your web browser.</p>
 
         <h2>Synthesizer</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form method="GET" onSubmit={handleSubmit(onSubmit)}>
           <fieldset>
             <legend>Text to synthesise</legend>
             <textarea {...register("input")} className="decde-webspeak--input" />
@@ -71,10 +71,11 @@ const WebSpeakPage = () => {
             <legend>Advanced Settings</legend>
 
             <div>
-              <label htmlFor="format">Sample Rate</label>
+              <label htmlFor="format">Preset</label>
               <select {...register("format")} id="format">
-                <option value={1}>11 kHz</option>
-                <option value={0}>8 kHz</option>
+                <option value={DECtalkTransformation.DEFAULT_11025}>11 kHz</option>
+                <option value={DECtalkTransformation.DEFAULT_8000}>8 kHz</option>
+                <option value={DECtalkTransformation.MOONBASE_ALPHA_44100}>Moonbase Alpha</option>
               </select>
             </div>
             <div>
