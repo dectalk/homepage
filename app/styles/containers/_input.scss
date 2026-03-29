@@ -1,0 +1,23 @@
+.decde-input--fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.decde-input--container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  align-items: flex-start;
+  // margin-bottom: 1em;
+}
+
+.decde-input--button {
+  padding: 0.7em 2em;
+}
+
+.decde-input--hint {
+  font-style: italic;
+  color: grey;
+}

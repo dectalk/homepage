@@ -4,6 +4,7 @@ import { SiteWrapper } from "~/components/site/SiteWrapper";
 import { DECtalkTransformation, useDectalk } from "./dectalk";
 import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "react-router";
+import { DecDeInputContainer, DecDeInputFieldset } from "~/components/containers/DecDeInputContainers";
 
 interface InputForm {
   phonemes: boolean;
@@ -67,25 +68,28 @@ const WebSpeakPage = () => {
             <legend>Text to synthesise</legend>
             <textarea {...register("input")} className="decde-webspeak--input" />
           </fieldset>
-          <fieldset>
-            <legend>Advanced Settings</legend>
-
-            <div>
+          <DecDeInputFieldset legend="Advanced Settings">
+            <DecDeInputContainer>
               <label htmlFor="format">Preset</label>
+
               <select {...register("format")} id="format">
                 <option value={DECtalkTransformation.DEFAULT_11025}>11 kHz</option>
                 <option value={DECtalkTransformation.DEFAULT_8000}>8 kHz</option>
                 <option value={DECtalkTransformation.MOONBASE_ALPHA_44100}>Moonbase Alpha</option>
               </select>
-            </div>
-            <div>
+            </DecDeInputContainer>
+            <DecDeInputContainer>
               <label htmlFor="phonemes">Enable phonemes</label>
-              <input type="checkbox" {...register("phonemes")} id="phonemes" />
-            </div>
-          </fieldset>
+              <div className="decde-input--hint" id="phonemes-hint">
+                This option configures whether <code>[:phone on]</code> is prefixed to your input, for singing.
+              </div>
+              <input type="checkbox" {...register("phonemes")} id="phonemes" aria-describedby="phonemes-hint" />
+            </DecDeInputContainer>
+          </DecDeInputFieldset>
           <div>
-            <button>{dectalk ? "Submit" : "Loading..."}</button>
+            <button className="decde-input--button">{dectalk ? "Submit" : "Loading..."}</button>
           </div>
+          <br />
           <div>
             {audioLink && (
               <audio ref={audioPlayer} controls>
