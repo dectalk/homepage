@@ -44,7 +44,11 @@ const HomePage = () => {
             },
             {
               key: "manual",
-              label: <GoTo href="http://dectalk.de/manual/">Manual</GoTo>,
+              label: (
+                <GoTo forceAnchor href="http://dectalk.de/manual/">
+                  Manual
+                </GoTo>
+              ),
               definition: "DECtalk for Windows Manual",
             },
           ]}
