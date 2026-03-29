@@ -3,7 +3,7 @@ import { SiteWrapper } from "~/components/site/SiteWrapper";
 import { DISCORD_INVITE } from "~/data/links";
 
 interface ICriticalErrorPage {
-  message: string;
+  message?: string;
   stack?: string;
 }
 
@@ -17,7 +17,7 @@ const CriticalErrorPage = ({ message, stack }: ICriticalErrorPage) => {
           <a href={DISCORD_INVITE}>Contact the community maintainers</a> if you continue to face issues with the web
           site.
         </p>
-        {message && stack && (
+        {(message || stack) && (
           <details>
             <summary>Detailed error summary</summary>
             {message && <p>{message}</p>}

@@ -41,6 +41,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   } else if (error instanceof Error) {
     message = error.message;
     stack = error.stack;
+  } else if (typeof error === "object" && error !== null && "message" in error && typeof error.message === "string") {
+    message = error.message;
   }
 
   return <CriticalErrorPage message={message} stack={stack} />;
