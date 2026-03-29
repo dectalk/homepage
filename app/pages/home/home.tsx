@@ -45,7 +45,7 @@ const HomePage = () => {
             {
               key: "manual",
               label: (
-                <GoTo forceAnchor href="http://dectalk.de/manual/">
+                <GoTo forceAnchor href="/manual/index.htm">
                   Manual
                 </GoTo>
               ),
