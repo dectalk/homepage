@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UST to DECtalk Converter (Client-side)</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --panel: #ffffff;
+        --ink: #111111;
+        --muted: #444444;
+        --accent: #111111;
+        --accent-2: #333333;
+        --error: #b00020;
+        --border: #cccccc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        min-height: 100vh;
+      }
+
+      main {
+        margin: 0;
+        padding: 12px;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        padding: 12px;
+        background: var(--panel);
+      }
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.4rem;
+      }
+
+      p {
+        margin-top: 0;
+        color: var(--muted);
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr auto auto auto;
+        gap: 10px;
+        align-items: end;
+        margin-bottom: 12px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+        font-size: 0.9rem;
+      }
+
+      input[type="file"],
+      input[type="number"],
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      input[type="file"],
+      input[type="number"],
+      textarea,
+      pre {
+        border: 1px solid var(--border);
+        border-radius: 0;
+        padding: 6px;
+        background: #fff;
+      }
+
+      button {
+        border: 1px solid #222;
+        border-radius: 0;
+        padding: 6px 10px;
+        cursor: pointer;
+        background: var(--accent);
+        color: white;
+        font-weight: 400;
+      }
+
+      button.secondary {
+        background: var(--accent-2);
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        min-height: 100px;
+      }
+
+      #status {
+        margin: 4px 0 12px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      #status[data-state="error"] {
+        color: var(--error);
+        font-weight: 600;
+      }
+
+      @media (max-width: 860px) {
+        .row {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .optline {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <h1>UST to DECtalk Converter</h1>
+
+        <div class="row">
+          <label>
+            UST file
+            <input id="ustFile" type="file" accept=".ust,.txt" />
+          </label>
+
+          <label>
+            Note offset
+            <input id="noteOffset" type="number" value="0" step="1" />
+          </label>
+
+          <button id="convertBtn" type="button">Convert</button>
+          <button id="copyBtn" type="button" class="secondary">Copy Output</button>
+        </div>
+
+        <button id="downloadBtn" type="button" class="secondary" style="margin-bottom: 12px">Download Output</button>
+        <button id="openBytesizedfoxBtn" type="button" class="secondary" style="margin-bottom: 12px" disabled>
+          Open in bytesizedfox.dev
+        </button>
+
+        <label class="optline">
+          <input id="useEspeak" type="checkbox" />
+          Enable espeak-ng WASM phonemizer for English lyrics (may take a moment to load)
+        </label>
+        <label class="optline">
+          <input id="stripLongSilences" type="checkbox" />
+          Strip long silences (> 5 seconds)
+        </label>
+
+        <div id="status" data-state="ok">Ready.</div>
+
+        <label>
+          Converted output
+          <textarea id="output" readonly placeholder="[:phone on] ..."></textarea>
+        </label>
+
+        <label>
+          Conversion details
+          <pre id="details"></pre>
+        </label>
+      </section>
+    </main>
+
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>

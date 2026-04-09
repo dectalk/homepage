@@ -4,5 +4,6 @@ export default [
   index("routes/home.tsx"),
   route("webspeak", "routes/webSpeak.tsx"),
   route("gameboy", "routes/gameboy.tsx"),
+  route("ust", "routes/ust.tsx"),
   route("*", "routes/pageNotFound.tsx"),
 ] satisfies RouteConfig;

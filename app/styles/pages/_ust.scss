@@ -1,0 +1,31 @@
+.decde-ust--output {
+  width: 90%;
+  height: 200px;
+}
+
+.decde-ust--details {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  font-family: monospace;
+  white-space: pre-wrap;
+  min-height: 100px;
+  margin-top: 0.5em;
+}
+
+.decde-ust--status {
+  margin: 1em 0;
+  font-weight: bold;
+  
+  &[data-state="error"] {
+    color: #b00020;
+  }
+}
+
+.decde-ust--row {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 1em;
+}

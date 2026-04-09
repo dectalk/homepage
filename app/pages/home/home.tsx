@@ -23,6 +23,11 @@ const HomePage = () => {
               definition: "where our code lives",
             },
             {
+              key: "ust-converter",
+              label: <GoTo href="/ust">UST Converter</GoTo>,
+              definition: "convert UTAU Sequence Text (.ust) to DECtalk",
+            },
+            {
               key: "webdemo",
               label: <GoTo href="/webspeak">Web Demo</GoTo>,
               definition: "a fully web based version of dectalk",
