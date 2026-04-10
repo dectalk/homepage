@@ -1,4 +1,4 @@
 
 /*
-  # Removed COOP/COEP headers to improve compatibility with Web Archive and other embeds.
-  # These are not required for single-threaded WASM synthesis.
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
