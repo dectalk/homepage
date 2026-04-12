@@ -39,9 +39,11 @@ const WebSpeakPage = () => {
           format: data.format,
         });
 
-        const blob = new Blob([buffer]);
-        const link = URL.createObjectURL(blob);
-        setAudioLink(link);
+        // use file instead of blob and set explicit type to fix download type bug on mobile
+        const file = new File([buffer], 'download.wav', { type: 'audio/wav' });
+        const audioLink = URL.createObjectURL(file);
+
+        setAudioLink(audioLink);
 
         setTimeout(() => {
           audioPlayer.current?.load();
@@ -94,8 +96,8 @@ const WebSpeakPage = () => {
           <br />
           <div>
             {audioLink && (
-              <audio ref={audioPlayer} controls>
-                {audioLink && <source src={audioLink} type="audio/x-wav" />}
+              <audio ref={audioPlayer} controls type="audio/wav">
+                {audioLink && <source src={audioLink} type="audio/x-wav"/>}
               </audio>
             )}
           </div>
