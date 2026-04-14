@@ -4,7 +4,7 @@ export default {
   // Config options...
   // Server-side render by default, to enable SPA mode set this to `false`
   prerender: {
-    paths: ["/", "/gameboy", "/404", "/webspeak"],
+    paths: ["/", "/gameboy", "/404", "/webspeak", "/lintalker"],
   },
   ssr: false,
 } satisfies Config;

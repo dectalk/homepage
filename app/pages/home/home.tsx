@@ -33,6 +33,11 @@ const HomePage = () => {
               definition: "a fully web based version of dectalk",
             },
             {
+              key: "lintalker",
+              label: <GoTo href="/lintalker">LinTalker</GoTo>,
+              definition: "a web version of LinTalker, an alternate speech synthesizer",
+            },
+            {
               key: "gameboy-demo",
               label: (
                 <GoTo forceAnchor href="/gameboy">
