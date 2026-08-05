@@ -61,7 +61,7 @@ class DECtalk {
     const synthesisSampleRate = this.getSynthesisSampleRate(format);
     const outputSampleRate = this.getOutputSampleRate(format);
 
-    const result = this._tts_speak(input, synthesisSampleRate === 11025 ? 1 : 0);
+    const result = this._tts_speak(input, synthesisSampleRate === 11025 ? 1 : 2);
     if (result !== 0) throw new Error("Synthesis error");
 
     const bufferPtr = this._tts_get_buffer();
